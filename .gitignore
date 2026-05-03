@@ -1,0 +1,21 @@
+# deps
+node_modules/
+
+# build
+dist/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# vite
+*.local
