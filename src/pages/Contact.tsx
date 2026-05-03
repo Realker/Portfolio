@@ -1,27 +1,33 @@
 import { type FormEvent, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Github, Linkedin, Mail, Send } from 'lucide-react'
+import { Linkedin, Mail, Send } from 'lucide-react'
 import SectionHeading from '../components/ui/SectionHeading'
 import Button from '../components/ui/Button'
 
+const GitHubIcon = () => (
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+  </svg>
+)
+
 const socials = [
   {
-    href: 'https://github.com/jonathanlim',
-    icon: Github,
+    href: 'https://github.com/Realker',
+    icon: GitHubIcon,
     label: 'GitHub',
-    handle: 'jonathanlim',
+    handle: 'Realker',
   },
   {
-    href: 'https://linkedin.com/in/jonathanlim',
+    href: 'https://linkedin.com/in/your-handle',
     icon: Linkedin,
     label: 'LinkedIn',
-    handle: 'in/jonathanlim',
+    handle: 'Add your LinkedIn handle',
   },
   {
-    href: 'mailto:jonathan_lim1@nuhs.edu.sg',
+    href: 'mailto:Jonathanlimxjw@gmail.com',
     icon: Mail,
     label: 'Email',
-    handle: 'jonathan_lim1@nuhs.edu.sg',
+    handle: 'Jonathanlimxjw@gmail.com',
   },
 ]
 
@@ -35,7 +41,7 @@ export default function Contact() {
     const email = (form.elements.namedItem('email') as HTMLInputElement).value
     const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value
 
-    window.location.href = `mailto:jonathan_lim1@nuhs.edu.sg?subject=Portfolio contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`From: ${name} <${email}>\n\n${message}`)}`
+    window.location.href = `mailto:Jonathanlimxjw@gmail.com?subject=Portfolio contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`From: ${name} <${email}>\n\n${message}`)}`
     setSent(true)
   }
 
@@ -60,10 +66,7 @@ export default function Contact() {
                 <p className="text-green-700 font-medium">Your email client should open shortly.</p>
                 <p className="mt-1 text-sm text-green-600">
                   If it didn't,{' '}
-                  <a
-                    href="mailto:jonathan_lim1@nuhs.edu.sg"
-                    className="underline"
-                  >
+                  <a href="mailto:Jonathanlimxjw@gmail.com" className="underline">
                     email me directly
                   </a>
                   .
@@ -129,7 +132,7 @@ export default function Contact() {
                 className="flex items-center gap-3 rounded-xl border border-gray-100 p-4 hover:border-gray-200 hover:bg-gray-50 transition-colors"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-gray-600">
-                  <Icon size={18} />
+                  <Icon />
                 </span>
                 <div>
                   <p className="text-sm font-medium text-gray-900">{label}</p>
